@@ -3,7 +3,7 @@ const app = express()
 const morgan = require('morgan')
 
 // Bring in routes
-const { getPosts } = require('./routes/post')
+const postRoutes = require('./routes/post')
 
 const myOwnMiddleware = (req, res, next) => {
     console.log('Middleware applied!')
@@ -14,9 +14,9 @@ const myOwnMiddleware = (req, res, next) => {
 app.use(morgan('dev'))
 app.use(myOwnMiddleware)
 
-app.get("/", getPosts);
+app.use("/", postRoutes);
 
-const port = 8080
+const port = process.env.PORT || 8080
 
 app.listen(port, () => {
     console.log('Server up on', port)
