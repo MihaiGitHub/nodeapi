@@ -1,0 +1,26 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "A Node Js API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaiGitHub/nodeapi.git"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihaiGitHub/nodeapi/issues"
+  },
+  "homepage": "https://github.com/MihaiGitHub/nodeapi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
