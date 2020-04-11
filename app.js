@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const expressValidator = require('express-validator')
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -21,6 +22,8 @@ const postRoutes = require('./routes/post')
 
 const myOwnMiddleware = (req, res, next) => {
     console.log('Middleware applied!')
+
+    // Proceed to next middleware
     next();
 }
 
@@ -28,6 +31,7 @@ const myOwnMiddleware = (req, res, next) => {
 app.use(morgan('dev'))
 app.use(myOwnMiddleware)
 app.use(bodyParser.json())
+app.use(expressValidator())
 app.use("/", postRoutes);
 
 const port = process.env.PORT || 8080
