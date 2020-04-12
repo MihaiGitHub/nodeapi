@@ -22,3 +22,14 @@ exports.createPost = (req, res) => {
             })
         })
 }
+
+exports.deletePost = (req, res) => {
+
+    Post.deleteOne({ _id: req.params.id }, function (err) {
+        if(err){
+            res.send('Error')
+        } else {
+            res.send('Deleted')
+        }
+    });
+}
